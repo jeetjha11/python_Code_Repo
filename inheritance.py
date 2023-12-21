@@ -2,15 +2,15 @@ class Employee:
     nn = 100
 
     # constructor
-    # def __init__(self, name, age, address, organization, designation):
-    #     self.name = name
-    #     self.age = age
-    #     self.address = address
-    #     self.organization = organization
-    #     self.designation = designation
+    def __init__(self, name, age, address, organization, designation):
+        self.name = name
+        self.age = age
+        self.address = address
+        self.organization = organization
+        self.designation = designation
 
-    # def __int__(self):
-    #     print("Default")
+    def __int__(self):
+        print("Default")
 
     # properties of the class
     name = "Vikash Ravi Das"
@@ -27,14 +27,7 @@ class Employee:
 # making object for the class
 # object name            Class name
 # employee       =      Employee()
-# name = input("Enter the name: ")
-# age = int(input("Enter the age: "))
-# address = input("Enter the address: ")
-# organization = input("Enter the company name")
-# designation = input("Enter the Designation: ")
-# employee = Employee(name, age, address, organization, designation)
-# print(employee.name, employee.age, employee.address, employee.organization, employee.designation)
-# print(employee)
+
 
 """
 TODO: WHY WE ARE NOT ABLE TO ACCESS THIS???
@@ -51,11 +44,28 @@ print(emp1.nn)
 # single level Inheritance
 
 class Programmer(Employee):
+    def __init__(self, name=None, age=None, address=None, organization=None, designation=None, programming_language=None):
+        # Call the constructor of the base class
+        super().__init__(name, age, address, organization, designation)
+        self.programming_language = programming_language
+
     def about_program(self):
         print("I am a programmer")
 
 
 programmer = Programmer()
-programmer.name="Vikash Ravi Das"
+programmer.name = "Vikash Ravi Das"
 print(programmer.name)
 print(programmer.display_data())
+
+if __name__ == "__main__":
+   p= Programmer()
+   print(p.name)
+   # name = input("Enter the name: ")
+   # age = int(input("Enter the age: "))
+   # address = input("Enter the address: ")
+   # organization = input("Enter the company name")
+   # designation = input("Enter the Designation: ")
+   # employee = Employee(name, age, address, organization, designation)
+   # print(employee.name, employee.age, employee.address, employee.organization, employee.designation)
+   # print(employee)
